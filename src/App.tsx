@@ -1,4 +1,5 @@
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
+import "./App.css"
 import { Header } from './components/Header'
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <>
       <Header title="Booksie"/>
       <div className="container"></div>
-      <footer className="footer">asdf</footer>
+      <footer className="footer">Footer</footer>
     </>
   )
 }

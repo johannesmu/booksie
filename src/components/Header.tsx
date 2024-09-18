@@ -27,7 +27,7 @@ export function Header(props: any) {
                         <Button variant='info' type='submit'>Search</Button>
                     </InputGroup>
                 </Form>
-                <Nav className="d-none">
+                <Nav className="d-none d-sm-flex order-5">
                     <Nav.Link href="/signin">Login</Nav.Link>
                     <Nav.Link href="/signup">Sign up</Nav.Link>
                     <Nav.Link href="/account">Account</Nav.Link>

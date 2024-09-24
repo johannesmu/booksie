@@ -1,0 +1,10 @@
+[
+    { "name":"Home", "route": "/", "group": "main", "auth" : false, "showwhenauthed": true},
+    { "name":"Books", "route": "/books", "group": "main", "auth" : false, "showwhenauthed": true},
+    { "name":"Contact", "route": "/contact", "group": "main", "auth" : false, "showwhenauthed": true},
+    { "name":"About", "route": "/about", "group": "main", "auth" : false, "showwhenauthed": true},
+    { "name":"Login", "route": "/login", "group": "user", "auth" : false, "showwhenauthed": false},
+    { "name":"Sign up", "route": "/signup", "group": "user", "auth" : false, "showwhenauthed": false},
+    { "name":"Account", "route": "/account", "group": "user", "auth" : true, "showwhenauthed": true},
+    { "name":"Log out", "route": "/logout", "group": "user", "auth" : true, "showwhenauthed": true}
+]

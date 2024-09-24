@@ -1,41 +1,33 @@
 
 import Container from 'react-bootstrap/Container'
-import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import Form from 'react-bootstrap/Form'
-import InputGroup from 'react-bootstrap/InputGroup'
-import NavDropdown from 'react-bootstrap/NavDropdown'
-import { Button } from 'react-bootstrap'
+import Button from 'react-bootstrap/Button'
+import { Navigation } from './Navigation'
+
 export function Header(props: any) {
+
     return (
-       <>
-        <Navbar expand="lg" className="bg-body-tertiary">
-            <Container  fluid>
-                <Navbar.Brand href="/" className="order-0">{ props.title }</Navbar.Brand>
-                <Navbar.Toggle aria-controls='main-nav' className="order-2"/>
-                <Navbar.Collapse id="main-nav" className="flex-lg-grow-0 order-4">
-                    <Nav>
-                        <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/books">Books</Nav.Link>
-                        <Nav.Link href="/contact">Contact</Nav.Link>
-                        <Nav.Link href="/about">About</Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-                <Form className="order-3">
-                    <InputGroup>
-                        <Form.Control aria-label='search term' type='search' />
-                        <Button variant='info' type='submit'>Search</Button>
-                    </InputGroup>
-                </Form>
-                <Nav className="d-none d-sm-flex order-5">
-                    <Nav.Link href="/signin">Login</Nav.Link>
-                    <Nav.Link href="/signup">Sign up</Nav.Link>
-                    <Nav.Link href="/account">Account</Nav.Link>
-                    <Nav.Link href="/signout">Log out</Nav.Link>
-                </Nav>
-            </Container>
-        </Navbar>
-       </>
+        <>
+            <Navbar as="header" expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark">
+                <Container fluid >
+                    <Navbar.Brand href="/" className="order-0 order-sm-0">
+                        {props.title}
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls='main-nav' className="order-2 order-sm-1" />
+                    <Navbar.Collapse id="main-nav" className="flex-lg-grow-0 order-4 order-sm-2">
+                        <Navigation source="/data/navigation.json" group="main" classes="test" />
+                    </Navbar.Collapse>
+                    <Form className="my-2 mx-sm-4 d-flex flex-sm-fill order-1 order-sm-3" >
+                        <Form.Control aria-label='search term' type='search' placeholder='search' />
+                        <Button variant="primary" type="submit" className="d-none d-sm-block">
+                            Search
+                        </Button>
+                    </Form>
+                    <Navigation source="/data/navigation.json" group="user" classes="d-none d-sm-flex order-3 order-sm-4" />
+                </Container>
+            </Navbar>
+        </>
     )
 }
 

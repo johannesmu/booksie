@@ -1,4 +1,7 @@
 import Nav from "react-bootstrap/Nav"
+interface const NavigationItem = {
+
+}
 export function Navigation( props:any ) {
   if( props.data ) {
     const NavItems = props.data.map( ( navitem ) => {
